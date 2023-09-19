@@ -3,6 +3,8 @@ import "./styles.css";
 import Products from "./pages/Products";
 import Navbar from "./components/Navbar";
 import Cart from "./pages/Cart";
+import { useState } from "react";
+
 
 function App() {
   const [products, setProducts] = useState([
@@ -16,10 +18,10 @@ function App() {
   return (
     <div>
       <h1>My Props App</h1>
-      <Navbar />
+      <Navbar products={products}/>
       <Routes>
-        <Route path="/" element={<Products />} />
-        <Route path="/cart" element={<Cart />} />
+        <Route path="/" element={<Products products={products} setProducts={setProducts}/>} />
+        <Route path="/cart" element={<Cart products={products}/>} />
       </Routes>
     </div>
   );
