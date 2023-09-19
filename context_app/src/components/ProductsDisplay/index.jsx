@@ -1,7 +1,11 @@
+import { useContext, useState } from "react"
+import { primaryContext } from "../../Context/primaryContext"
 
 const ProductsDisplay = () => {
+    const {products} = useContext(primaryContext)
 
-    const handleProductClick = (id) => {
+  
+    const handleProductClick = (name) => {
         // we have the id of the clicked property
         
         // 1. make a new products array (from the old state)
@@ -13,7 +17,7 @@ const ProductsDisplay = () => {
     <div>
         {/* we need the products array here */}
         {products.map((product) => {
-            return <div onClick={() => handleProductClick(product.id)}>product.name</div>
+            return <div key={product.name} onClick={() => handleProductClick(product.name)}>{product.name}</div>
         })}
     </div>
   )
