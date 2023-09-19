@@ -1,27 +1,21 @@
 
-const ProductsDisplay = ({products, setProducts}) => {
-  
-        // we have the id of the clicked property       
+const ProductsDisplay = () => {
+
+    const handleProductClick = (id) => {
+        // we have the id of the clicked property
+        
         // 1. make a new products array (from the old state)
         // 2. set inCart = true for the clicked product
         // 3. set state to this new products array
-   
-    const handleProductClick = (id) => {
-      const updatedProducts = products.map((product) => {
-        if (product.id === id) {
-          return {product};
-        }
-        return product;
-      });
-      setProducts(updatedProducts);
-    };
+    }
+
   return (
-    <div>
+  <div>
         {/* we need the products array here */}
         {products.map((product) => {
-            return <div key={product.name} onClick={() => handleProductClick(product.name)}>{product.name}</div>
+            return <div onClick={() => handleProductClick(product.id)}>product.name</div>
         })}
-    </div>
+  </div>
   )
 }
 

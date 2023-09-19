@@ -3,19 +3,13 @@ const Cart = ({products}) => {
   return (
     <div>
         {/* we need products array here */}
-        {products.filter((product) => {
+        {/* {products.filter((product) => {
             if (product.inCart) {
-                return trueccd
+                return true
             } else {
-                return false
+                return false;
             }
-          }).map((product) => {
-            return (
-                <div key={product.name}>
-                    {product.name} - ${product.price}
-                </div>
-            );
-        })}
+        })} */}
     </div>
   )
 }

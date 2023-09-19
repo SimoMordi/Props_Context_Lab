@@ -3,7 +3,7 @@ import "./styles.css";
 import Products from "./pages/Products";
 import Navbar from "./components/Navbar";
 import Cart from "./pages/Cart";
-import { useState } from "react";
+
 function App() {
   const [products, setProducts] = useState([
     { name: "Laptop", price: 1000, inCart: false },
